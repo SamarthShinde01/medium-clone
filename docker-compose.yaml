@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  backend:
+    image: blog_backend
+    container_name: blog_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://test_owner:2yot7OKuhHWw@ep-lively-frog-a5m5653q.us-east-2.aws.neon.tech/medium-app?sslmode=require
+      - PORT=5000
+      - JWT_SECRET=samarth-secrey-key
+
+  frontend:
+    image: medium_frontend
+    container_name: blog_frontend
+    ports:
+      - "3000:3000"
